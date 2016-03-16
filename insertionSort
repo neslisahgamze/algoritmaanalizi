@@ -1,21 +1,25 @@
 def insertionSort(alist):
     karsilastirma=0
     yerdegistirme=0
+    girdi= False
     for index in range(1,len(alist)):
     
         currentvalue = alist[index]
         position = index
-        karsilastirma=karsilastirma+1
+        girdi= False
         while position>0 and alist[position-1]>currentvalue:
              yerdegistirme=yerdegistirme+1
              karsilastirma=karsilastirma+1
              alist[position]=alist[position-1]
              position = position-1
+             girdi= True
+   
+        if girdi == False:
+            karsilastirma=karsilastirma+1
+            girdi = True
+        alist[position]=currentvalue
     print("karsılastırma sayısı : ",karsilastirma)
     print("yerdegistirme sayısı : ",yerdegistirme)
-        
-    alist[position]=currentvalue
-
 
 def createAnArray(size):
     import random
